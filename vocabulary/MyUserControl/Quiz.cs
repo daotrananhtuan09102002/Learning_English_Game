@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AxWMPLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,9 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.WebRequestMethods;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
+using WMPLib;
 
 namespace vocabulary.MyUserControl
 {
@@ -22,6 +21,7 @@ namespace vocabulary.MyUserControl
         private int GameDifficulty;
         private int duration;
         public int score = 0;
+        public event EventHandler CloseQuizControl;
         public Quiz()
         {
             InitializeComponent();
@@ -196,6 +196,17 @@ namespace vocabulary.MyUserControl
             return false;
         }
 
+        public void playAudio(bool playAudioMode)
+        {
+            WindowsMediaPlayer axWindowsMediaPlayer = new WindowsMediaPlayer();
+            axWindowsMediaPlayer.settings.volume = 80;
+            if (playAudioMode)
+                axWindowsMediaPlayer.URL = @"C:\Users\tuan\source\repos\vocabulary\vocabulary\Resources\message-incoming-132126.mp3";
+            else
+                axWindowsMediaPlayer.URL = @"C:\Users\tuan\source\repos\vocabulary\vocabulary\Resources\negative_beeps-6008.mp3";
+            axWindowsMediaPlayer.controls.play();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             index++;
@@ -206,12 +217,13 @@ namespace vocabulary.MyUserControl
                 PictureBox control = this.Controls.Find("pictureBox" + (index+1).ToString(), true)[0] as PictureBox;
                 if (check())
                 {
-                    
                     control.Image = Image.FromFile(@"C:\Users\tuan\source\repos\vocabulary\vocabulary\Resources\check-mark.png");
                     score += 20;
+                    playAudio(true);
                 }
                 else
                 {
+                    playAudio(false);
                     control.Image = Image.FromFile(@"C:\Users\tuan\source\repos\vocabulary\vocabulary\Resources\wrong.png");
                 }
                 label4.Text = score.ToString();
@@ -219,7 +231,8 @@ namespace vocabulary.MyUserControl
             if (index >= 5)
             {          
                 timer1.Stop();
-                this.Hide();
+                button1.Visible = false;
+                button2.Visible = true;
                 return;
             }
             if (this.GameDifficulty == 0)
@@ -251,6 +264,12 @@ namespace vocabulary.MyUserControl
                 button1_Click(sender, e);
             }
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CloseQuizControl?.Invoke(this, e);
+            this.Hide();
         }
     }
 }

@@ -43,7 +43,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(36, 77);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 114);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(106, 102);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -55,11 +55,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe Print", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(192, 13);
+            this.label1.Location = new System.Drawing.Point(121, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(342, 71);
+            this.label1.Size = new System.Drawing.Size(533, 71);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Congratulation!";
+            this.label1.Text = "Congratulation, tuanpro!";
             // 
             // label2
             // 
@@ -67,7 +67,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe Print", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(190, 136);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(216, 61);
+            this.label2.Size = new System.Drawing.Size(210, 58);
             this.label2.TabIndex = 2;
             this.label2.Text = "Your score:";
             // 
@@ -77,7 +77,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe Print", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(190, 206);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 61);
+            this.label3.Size = new System.Drawing.Size(119, 58);
             this.label3.TabIndex = 3;
             this.label3.Text = "Rank:";
             // 
@@ -87,7 +87,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe Print", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(190, 277);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(194, 61);
+            this.label4.Size = new System.Drawing.Size(183, 58);
             this.label4.TabIndex = 4;
             this.label4.Text = "Difficulty:";
             // 
@@ -97,7 +97,7 @@
             this.label5.Font = new System.Drawing.Font("Segoe Print", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(434, 136);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(124, 61);
+            this.label5.Size = new System.Drawing.Size(119, 58);
             this.label5.TabIndex = 5;
             this.label5.Text = "Rank:";
             // 
@@ -107,7 +107,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe Print", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(434, 206);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(124, 61);
+            this.label6.Size = new System.Drawing.Size(119, 58);
             this.label6.TabIndex = 6;
             this.label6.Text = "Rank:";
             // 
@@ -117,7 +117,7 @@
             this.label7.Font = new System.Drawing.Font("Segoe Print", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(434, 277);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(124, 61);
+            this.label7.Size = new System.Drawing.Size(119, 58);
             this.label7.TabIndex = 7;
             this.label7.Text = "Rank:";
             // 
@@ -125,6 +125,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -135,7 +138,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Notice";
             this.Size = new System.Drawing.Size(713, 397);
-            this.Load += new System.EventHandler(this.Notice_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

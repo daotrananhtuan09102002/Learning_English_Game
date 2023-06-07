@@ -26,7 +26,7 @@ namespace vocabulary
             player = new WindowsMediaPlayer();
             player.URL = @"C:\Users\tuan\source\repos\vocabulary\vocabulary\Resources\nhacgame01.mp3";
             player.controls.play();
-            player.settings.volume = 50;
+            player.settings.volume = 30;
             player.settings.setMode("loop", true);
         }
 
@@ -40,7 +40,7 @@ namespace vocabulary
             }
             else
             {
-                player.URL = @"C:\Users\tuan\source\repos\vocabulary\vocabulary\Resources\nhacnen3.mp3";
+                //player.URL = @"C:\Users\tuan\source\repos\vocabulary\vocabulary\Resources\nhacnen3.mp3";
                 player.controls.play();
                 pictureBox2.Image = Image.FromFile(@"C:\Users\tuan\source\repos\vocabulary\vocabulary\Resources\sound.png");
             }

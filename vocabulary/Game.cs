@@ -24,7 +24,8 @@ namespace vocabulary
         public void Level1_CloseLevelControl(object sender, EventArgs e)
         { 
             this.levelDifficulty = level1.LevelDifficulty;
-            showQuiz(typeQuiz, levelDifficulty);
+            panel2.Visible = true;
+            //showQuiz(typeQuiz, levelDifficulty);
         }
 
         public Game(string typeQuiz, object home)
@@ -44,14 +45,37 @@ namespace vocabulary
         public void showQuiz(string typeQuiz, int LevelDifficulty)
         {
             Quiz quiz = new Quiz(typeQuiz, level1.LevelDifficulty);
+            quiz.CloseQuizControl += new EventHandler(Quiz_CloseQuizControl);
             panel1.Controls.Add(quiz);
             panel1.Visible = true;
+        }
+
+        public void Quiz_CloseQuizControl(object sender, EventArgs e)
+        {
+            notice1.gameDifficulty = level1.LevelDifficulty;
+            notice1.score = (sender as Quiz).score;
+            notice1.name = textBox1.Text;
+            button1.Visible = true;
+            notice1.Notice_Load();
+            notice1.Show();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
             home1.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            home1.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
+            showQuiz(typeQuiz, levelDifficulty);
         }
     }
 }
