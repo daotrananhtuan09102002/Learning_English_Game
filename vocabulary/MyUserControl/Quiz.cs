@@ -243,14 +243,11 @@ namespace vocabulary.MyUserControl
             {
                 label1.Visible = true;
                 label7.Visible = true;
-                this.duration = 5;
+                this.duration = 15;
                 timer1.Start();
-                label1.Text = "5";
+                label1.Text = "15";
                 showNewMediumQuiz();
-            }
-            
-                
-
+            }                    
         }
 
         private void timer1_Tick(object sender, EventArgs e)

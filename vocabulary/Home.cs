@@ -26,7 +26,7 @@ namespace vocabulary
             player = new WindowsMediaPlayer();
             player.URL = @"C:\Users\tuan\source\repos\vocabulary\vocabulary\Resources\nhacgame01.mp3";
             player.controls.play();
-            player.settings.volume = 30;
+            player.settings.volume = 10;
             player.settings.setMode("loop", true);
         }
 
@@ -77,6 +77,14 @@ namespace vocabulary
             Game game = new Game("fruit", this);
             game.FormClosed += Game_FormClosed;
             game.Show();
+            this.Hide();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Ranking ranking = new Ranking(this);
+            ranking.FormClosed += Game_FormClosed;
+            ranking.Show();
             this.Hide();
         }
     }
